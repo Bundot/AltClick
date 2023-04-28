@@ -28,14 +28,7 @@ nextBtnSec.addEventListener("click", function(event){
   current += 1;
 });
 
-// nextBtnThird.addEventListener("click", function(event){
-//   event.preventDefault();
-//   slidePage.style.marginLeft = "-75%";
-//   bullet[current - 1].classList.add("active");
-//   progressCheck[current - 1].classList.add("active");
-//   progressText[current - 1].classList.add("active");
-//   current += 1;
-// });
+
 
 submitBtn.addEventListener("click", function(){
   bullet[current - 1].classList.add("active");
@@ -43,7 +36,7 @@ submitBtn.addEventListener("click", function(){
   progressText[current - 1].classList.add("active");
   current += 1;
   setTimeout(function(){
-    alert("Your Form Successfully Signed up");
+    alert("You have successfully applied! You can now navigate back to our site. Thank you!");
     location.reload();
   },800);
 });
@@ -56,15 +49,6 @@ prevBtnSec.addEventListener("click", function(event){
   progressText[current - 2].classList.remove("active");
   current -= 1;
 });
-
-// prevBtnThird.addEventListener("click", function(event){
-//   event.preventDefault();
-//   slidePage.style.marginLeft = "-25%";
-//   bullet[current - 2].classList.remove("active");
-//   progressCheck[current - 2].classList.remove("active");
-//   progressText[current - 2].classList.remove("active");
-//   current -= 1;
-// });
 
 prevBtnFourth.addEventListener("click", function(event){
   event.preventDefault();
