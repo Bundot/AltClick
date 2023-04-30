@@ -36,7 +36,7 @@ submitBtn.addEventListener("click", function(){
   progressText[current - 1].classList.add("active");
   current += 1;
   setTimeout(function(){
-    alert("You have successfully applied! You can now navigate back to our site. Thank you!");
+    alert("You have successfully applied! You can now navigate back to our site. We'll get back to you through the email you provided.");
     location.reload();
   },800);
 });
