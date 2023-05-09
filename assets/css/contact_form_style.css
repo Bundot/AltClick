@@ -211,7 +211,7 @@ select {
 select {
   word-wrap: normal; }
 
-button,
+button, 
 [type="button"],
 [type="reset"],
 [type="submit"] {
