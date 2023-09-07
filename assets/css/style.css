@@ -182,3 +182,57 @@ form .page .btns button.next{
   display: block;
   color: #fff;
 }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            margin-top: 50;
+        }
+
+        .list {
+            list-style-type: none;
+            margin-top: 50px;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .list-item {
+            margin: 0;
+            padding: 0;
+            position: relative;
+        }
+
+        .list-item + .list-item {
+            margin-left: 50px;
+        }
+
+        .list-container {
+            border-bottom: 2px solid gray; /* Add a continuous line under the entire list */
+            margin-top: 50px;
+        }
+
+        .squarecontainer{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .square {
+            width: 300px; /* Set the width of the square */
+            height: 200px; /* Set the height of the square */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Apply a shadow to make the square visible */
+            background-color: transparent; /* Remove the background color */
+            margin-top: 50px;
+            
+        }
+
+        
+        .list-item a {
+    color: black; /* Default text color */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s; /* Smooth transition for color change */
+}
+
+.list-item a:hover, .list-item a:active {
+    color: blue; /* Text color on hover and click */
+}

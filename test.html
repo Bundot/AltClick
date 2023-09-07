@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Horizontal List</title>
+    <style>
+        .container {
+            display: flex;
+            flex-direction: column; /* Stack elements vertically on smaller screens */
+            justify-content: center;
+            align-items: center;
+            padding: 10px; /* Reduce padding for smaller screens */
+        }
+
+        .list {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap; /* Allow list items to wrap on smaller screens */
+            justify-content: center;
+        }
+
+        .list-item {
+            margin: 0;
+            padding: 0;
+            position: relative;
+            margin-top: 10px; /* Add margin at the top of each list item for smaller screens */
+        }
+
+        .list-item + .list-item {
+            margin-left: 10px; /* Reduce the margin between list items for smaller screens */
+        }
+
+        .list-container {
+            border-bottom: 2px solid gray;
+        }
+
+        .list-item a {
+            color: black;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .list-item a:hover, .list-item a:active {
+            color: blue;
+        }
+
+        /* Fluid typography based on viewport width */
+        h2 {
+            font-size: calc(16px + 2vw);
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: calc(14px + 1vw);
+        }
+
+        /* Styles for smaller screens (less than 768px wide) */
+        @media screen and (max-width: 768px) {
+            .list-item + .list-item {
+                margin-left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="list-container">
+            <ul class="list">
+                <li class="list-item"><a class="active" data-url="teachingServices.html"> Teaching </a></li>
+                <li class="list-item"><a data-url="multimedia.html"> Multimedia </a></li>
+                <li class="list-item"><a data-url="printing.html"> Printing </a></li>
+                <li class="list-item"><a data-url="hardware.html"> Hardware </a></li>
+                <li class="list-item"><a data-url="consultation.html"> Consultation </a></li>
+            </ul>
+        </div>
+    </div>
+    <div id="content-section"></div>
+    <script>
+            // Function to load content into the specified section
+    function loadContent(url, targetId) {
+        fetch(url)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.text();
+            })
+            .then(data => {
+                document.getElementById(targetId).innerHTML = data;
+            })
+            .catch(error => console.error('Error loading content:', error));
+    }
+
+    // Add click event listeners to the list items
+    document.querySelectorAll('.list-item a').forEach(item => {
+        item.addEventListener('click', function (event) {
+            event.preventDefault(); // Prevent the default link behavior
+            const targetId = 'content-section'; // ID of the section to load content
+            const url = this.getAttribute('data-url');
+            loadContent(url, targetId);
+        });
+    });
+
+    // Load the default content (Teaching) when the page loads
+    window.addEventListener('load', function () {
+        const defaultUrl = document.querySelector('.list-item a.active').getAttribute('data-url');
+        const targetId = 'content-section'; // ID of the section to load content
+        loadContent(defaultUrl, targetId);
+    });
+    </script>
+</body>
+</html>

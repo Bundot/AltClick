@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Text in Squares</title>
+    <style>
+        .squarecontainer {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: flex-start; /* Align items to the top */
+            height: 100vh; 
+        }
+
+        .square {
+            width: calc(50% - 25px); /* 50% width with a margin of 25px in between */
+            height: 200px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            background-color: transparent;
+            text-align: center;
+            padding: 2%;
+            box-sizing: border-box;
+            margin-bottom: 25px; /* Margin at the bottom of each square */
+        }
+
+        .square:nth-child(2n) {
+            margin-left: 25px; /* Add a margin to the second item in each row */
+        }
+
+        h2 {
+            font-size: calc(16px + 0.5vw); 
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: calc(14px + 0.5vw); 
+        }
+
+        .icon img {
+    width: 50px; /* Adjust the width to your desired size */
+    height: 50px; /* Adjust the height to your desired size */
+    margin-right: 10px; /* Add some space between the icon and text */
+    vertical-align: middle; /* Align the icon vertically with the text */
+}
+
+.item {
+    color: rgb(50,121,252);
+ }
+
+    </style>
+</head>
+<body>
+    <div class="squarecontainer">
+        <div class="square">
+            <img src="assets/icons/webdev.png" alt="Web Development Icon">
+            <h2 class="item">Web Development</h2>
+            <p>Web development consultation for all businesses.</p>
+        </div>
+        <div class="square">
+            <img src="assets/icons/phone.png" alt="Web Development Icon">
+            <h2 class="item">Mobile Development</h2>
+            <p>Reliable Mobile App development consultation services.</p>
+        </div>
+        <div class="square">
+            <img src="assets/icons/school.png" alt="Web Development Icon">
+            <h2 class="item">School Projects</h2>
+            <p>High-quality school project consultation.</p>
+        </div>
+        <div class="square">
+            <img src="assets/icons/security.png" alt="Web Development Icon">
+            <h2 class="item">Cyber Security</h2>
+            <p>Reliable cyber security consultation services.</p>
+        </div>
+        
+    </div>
+</body>
+</html>

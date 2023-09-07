@@ -1,0 +1,50 @@
+.container {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically on smaller screens */
+    justify-content: center;
+    align-items: center;
+    padding: 10px; /* Reduce padding for smaller screens */
+}
+
+.list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap; /* Allow list items to wrap on smaller screens */
+    justify-content: center;
+}
+
+.list-item {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    margin-top: 10px; /* Add margin at the top of each list item for smaller screens */
+}
+
+.list-item + .list-item {
+    margin-left: 50px; /* Reduce the margin between list items for smaller screens */
+}
+
+.list-container {
+    border-bottom: 2px solid gray;
+}
+
+/* Fluid typography based on viewport width */
+h2 {
+    font-size: calc(16px + 2vw);
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: calc(14px + 1vw);
+}
+
+/* Styles for smaller screens (less than 768px wide) */
+@media screen and (max-width: 768px) {
+    .list-item + .list-item {
+        margin-left: 0;
+    }
+}
+
+
